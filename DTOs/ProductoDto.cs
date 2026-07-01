@@ -3,10 +3,17 @@ namespace LaTiendaApi.DTOs
     public class ProductoDto
     {
         public int IdProducto { get; set; }
+
+        public int IdCategoria { get; set; }   // <-- AGREGA ESTA LÍNEA
+
         public string? Nombre { get; set; }
+
         public decimal? Precio { get; set; }
+
         public int? Stock { get; set; }
+
         public bool? Estado { get; set; }
+
         public string CategoriaNombre { get; set; } = string.Empty;
     }
 

@@ -9,10 +9,12 @@ namespace LaTiendaApi.Mappings
         public MappingProfile()
         {
             CreateMap<Producto, ProductoDto>()
+                .ForMember(dest => dest.IdCategoria,
+                    opt => opt.MapFrom(src => src.IdCategoria))
                 .ForMember(dest => dest.CategoriaNombre,
-                           opt => opt.MapFrom(src => src.objCategoria != null
-                                                     ? src.objCategoria.Nombre
-                                                     : string.Empty));
+                    opt => opt.MapFrom(src => src.objCategoria != null
+                        ? src.objCategoria.Nombre
+                        : string.Empty));
 
             CreateMap<ProductoCreateDto, Producto>();
 
